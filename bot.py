@@ -14,7 +14,7 @@ with open(os.path.join('src', 'config.JSON'), 'r') as file:
 	config = json.load(file)
 	TOKEN = config['token']
 	accepted_authors = config['thema_users']
-
+	GOOGLE_SHEET_LINK = config['google_sheet_link']
 
 bot = commands.Bot(command_prefix='?')
 global current_theme
@@ -90,7 +90,7 @@ async def thema(ctx):
 		while vc.is_playing():
 			await asyncio.sleep(1)
 		# disconnect after the player has finished
-		current_theme = thema_sheet()
+		current_theme = thema_sheet(GOOGLE_SHEET_LINK)
 		await ctx.message.channel.send(current_theme.drawn_thema_to_string())
 		vc.stop()
 		await vc.disconnect()

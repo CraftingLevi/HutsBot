@@ -3,12 +3,14 @@ import pandas as pd
 import io
 import numpy as np
 
+
+
 class thema_sheet():
 
-	def __init__(self):
+	def __init__(self, google_sheet_link):
 		df = pd.read_csv( \
 							io.BytesIO(\
-								requests.get('https://docs.google.com/spreadsheets/d/e/2PACX-1vQphpe7xXb0iv7Dgf_nhcMu_givLYW2lriNLM7CLTFbukBh3ZGKvrq7UwvV7E53LLEA68sXFA-jAW5z/pub?gid=0&single=true&output=csv').content)\
+								requests.get(google_sheet_link).content)\
 								)
 		self.content = df.dropna(subset=[df.columns[1]])
 		roll = np.random.randint(low=0, high=max(self.content.index)+1)
