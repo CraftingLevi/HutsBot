@@ -9,7 +9,7 @@ src/welterusten.mp3 --> sound file in mp3 format
 config.JSON should have the following form:
 {
 "token":"<DISCORD APPLICATION TOKEN>", 
-"thema_users":"[<(int) UUID>...<(int) UUID>]",
+"thema_users":[<(int) UUID>...<(int) UUID>],
 "google_sheet_link":"<link to google sheet file>"
 }
 
