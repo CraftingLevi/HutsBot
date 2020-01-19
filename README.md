@@ -14,11 +14,11 @@ config.JSON should have the following form:
 
 {
 
-"token":"<DISCORD APPLICATION TOKEN>", 
+"token":"DISCORD APPLICATION TOKEN", 
   
-"thema_users":[<(int) UUID>...<(int) UUID>],
+"thema_users":[(int) UUID...(int) UUID],
 
-"google_sheet_link":"<link to google sheet file>"
+"google_sheet_link":"google sheet link"
 
 }
 
